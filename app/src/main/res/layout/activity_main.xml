@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/main_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MQTT Mobile App"
+            android:textSize="25sp"
+            android:fontFamily="@font/adamina"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/a_bg"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/outline_bg"
+            android:paddingVertical="10dp"
+            android:layout_marginHorizontal="10dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adamina"
+                android:text="Connect"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/led_ctrl_txt"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="20dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/disconnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adamina"
+                android:text="Disconect"
+                android:layout_centerHorizontal="true"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/led_ctrl_txt"
+                android:layout_toRightOf="@id/led_on"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="20dp"/>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/outline_bg">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/publish_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Publish Data"
+                android:textSize="25sp"
+                android:fontFamily="@font/adamina"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pub_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Topic"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_below="@+id/publish_txt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/adamina">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pub_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the data"
+                android:layout_below="@+id/pub_topic"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="15dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/adamina">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/publish_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adamina"
+                android:text="Publish"
+                android:layout_centerHorizontal="true"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/pub_data"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/outline_bg">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/temp_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read The Temperature"
+                android:textSize="25sp"
+                android:fontFamily="@font/adamina"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/temp_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter The Topic"
+                android:layout_below="@+id/temp_txt"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="15dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/adamina">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/temp_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/temp_topic">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/temp_cel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/adamina"
+                    android:textColor="@color/black"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20sp"
+                    android:layout_below="@+id/temp_topic"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="20dp"
+                    android:paddingLeft="20dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/temp_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=" _ "
+                    android:fontFamily="@font/adamina"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/outline_bg"
+                    android:paddingVertical="7dp"
+                    android:paddingHorizontal="20dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/temp_layout"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/read_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/adamina"
+                    android:text="Read"
+                    android:layout_centerHorizontal="true"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="20dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/read_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/adamina"
+                    android:text="Stop"
+                    android:layout_centerHorizontal="true"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/outline_bg">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/led_ctrl_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Control LED"
+                android:textSize="25sp"
+                android:fontFamily="@font/adamina"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/led_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter The Topic"
+                android:layout_below="@+id/led_ctrl_txt"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="15dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/adamina">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/led_topic"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/led_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/adamina"
+                    android:text="ON"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/led_topic"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="20dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/led_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/adamina"
+                    android:text="OFF"
+                    android:layout_centerHorizontal="true"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/led_topic"
+                    android:layout_toRightOf="@id/led_on"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
